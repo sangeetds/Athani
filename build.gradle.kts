@@ -1,6 +1,7 @@
-val ktor_version: String by project
-val kotlin_version: String by project
-val logback_version: String by project
+val ktorVersion: String by project
+val kotlinVersion: String by project
+val logbackVersion: String by project
+val koinVersion: String by project
 
 plugins {
   application
@@ -20,16 +21,26 @@ repositories {
 }
 
 dependencies {
-  implementation("io.ktor:ktor-server-core:$ktor_version")
-  implementation("io.ktor:ktor-server-host-common:$ktor_version")
-  implementation("io.ktor:ktor-server-status-pages:$ktor_version")
-  implementation("io.ktor:ktor-server-cors:$ktor_version")
-  implementation("io.ktor:ktor-server-call-logging:$ktor_version")
-  implementation("io.ktor:ktor-server-content-negotiation:$ktor_version")
-  implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
-  implementation("io.ktor:ktor-server-locations:$ktor_version")
-  implementation("io.ktor:ktor-server-tomcat:$ktor_version")
-  implementation("ch.qos.logback:logback-classic:$logback_version")
-  testImplementation("io.ktor:ktor-server-tests:$ktor_version")
-  testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+  implementation("io.ktor:ktor-server-core:$ktorVersion")
+  implementation("io.ktor:ktor-server-host-common:$ktorVersion")
+  implementation("io.ktor:ktor-server-status-pages:$ktorVersion")
+  implementation("io.ktor:ktor-server-cors:$ktorVersion")
+  implementation("io.ktor:ktor-server-call-logging:$ktorVersion")
+  implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
+  implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+  implementation("io.ktor:ktor-server-locations:$ktorVersion")
+  implementation("io.ktor:ktor-server-tomcat:$ktorVersion")
+  implementation("ch.qos.logback:logback-classic:$logbackVersion")
+
+  // Koin for Ktor
+  implementation("io.insert-koin:koin-ktor:$koinVersion")
+// SLF4J Logger
+  implementation("io.insert-koin:koin-logger-slf4j:$koinVersion")
+
+  testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
+  testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>() {
+  kotlinOptions.jvmTarget = "11"
 }
