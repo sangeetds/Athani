@@ -21,20 +21,24 @@ repositories {
 }
 
 dependencies {
+  // Ktor
   implementation("io.ktor:ktor-server-core:$ktorVersion")
   implementation("io.ktor:ktor-server-host-common:$ktorVersion")
   implementation("io.ktor:ktor-server-status-pages:$ktorVersion")
   implementation("io.ktor:ktor-server-cors:$ktorVersion")
   implementation("io.ktor:ktor-server-call-logging:$ktorVersion")
+  implementation("io.ktor:ktor-server-tomcat:$ktorVersion")
+
+  // Serialization
   implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
   implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
-  implementation("io.ktor:ktor-server-locations:$ktorVersion")
-  implementation("io.ktor:ktor-server-tomcat:$ktorVersion")
+
+  // Logging
   implementation("ch.qos.logback:logback-classic:$logbackVersion")
 
   // Koin for Ktor
   implementation("io.insert-koin:koin-ktor:$koinVersion")
-// SLF4J Logger
+  // SLF4J Logger
   implementation("io.insert-koin:koin-logger-slf4j:$koinVersion")
 
   testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
