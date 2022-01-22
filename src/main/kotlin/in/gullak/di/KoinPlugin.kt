@@ -1,4 +1,4 @@
-package `in`.athani.di
+package `in`.gullak.di
 
 import io.ktor.events.EventDefinition
 import io.ktor.server.application.Application

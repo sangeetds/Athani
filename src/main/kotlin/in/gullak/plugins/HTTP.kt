@@ -1,4 +1,4 @@
-package `in`.athani.plugins
+package `in`.gullak.plugins
 
 import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpMethod

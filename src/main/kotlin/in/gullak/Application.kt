@@ -1,10 +1,10 @@
-package `in`.athani
+package `in`.gullak
 
-import `in`.athani.plugins.configureHTTP
-import `in`.athani.plugins.configureMonitoring
-import `in`.athani.plugins.configureRouting
-import `in`.athani.plugins.configureSerialization
-import `in`.athani.plugins.initiateKoin
+import `in`.gullak.plugins.configureHTTP
+import `in`.gullak.plugins.configureMonitoring
+import `in`.gullak.plugins.configureRouting
+import `in`.gullak.plugins.configureSerialization
+import `in`.gullak.plugins.initiateKoin
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.tomcat.Tomcat
 

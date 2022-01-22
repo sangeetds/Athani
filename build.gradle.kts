@@ -9,10 +9,10 @@ plugins {
   id("org.jetbrains.kotlin.plugin.serialization") version "1.6.10"
 }
 
-group = "in.athani"
+group = "in.gullak"
 version = "0.0.1"
 application {
-  mainClass.set("in.athani.ApplicationKt")
+  mainClass.set("in.gullak.ApplicationKt")
 }
 
 repositories {
@@ -40,6 +40,8 @@ dependencies {
   implementation("io.insert-koin:koin-ktor:$koinVersion")
   // SLF4J Logger
   implementation("io.insert-koin:koin-logger-slf4j:$koinVersion")
+
+  implementation("com.apurebase:kgraphql-ktor:0.17.14")
 
   testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
   testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")

@@ -1,4 +1,4 @@
-package `in`.athani.users
+package `in`.gullak.users
 
 data class User(
   val id: Int,

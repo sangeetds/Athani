@@ -1,4 +1,4 @@
-package `in`.athani.plugins
+package `in`.gullak.plugins
 
 import io.ktor.server.application.Application
 import io.ktor.server.application.install

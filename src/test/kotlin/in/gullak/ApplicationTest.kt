@@ -1,6 +1,6 @@
-package `in`.athani
+package `in`.gullak
 
-import `in`.athani.plugins.configureRouting
+import `in`.gullak.plugins.configureRouting
 import io.ktor.http.HttpMethod
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.testing.handleRequest

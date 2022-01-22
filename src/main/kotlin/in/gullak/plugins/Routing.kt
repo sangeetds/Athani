@@ -1,4 +1,4 @@
-package `in`.athani.plugins
+package `in`.gullak.plugins
 
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application

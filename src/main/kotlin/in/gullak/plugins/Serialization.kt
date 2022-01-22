@@ -1,4 +1,4 @@
-package `in`.athani.plugins
+package `in`.gullak.plugins
 
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.server.application.Application
