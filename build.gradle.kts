@@ -28,6 +28,9 @@ dependencies {
   implementation("io.ktor:ktor-server-cors:$ktorVersion")
   implementation("io.ktor:ktor-server-call-logging:$ktorVersion")
   implementation("io.ktor:ktor-server-tomcat:$ktorVersion")
+  implementation("io.ktor:ktor-server-locations:$ktorVersion")
+
+
 
   // Serialization
   implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")

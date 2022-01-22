@@ -4,7 +4,8 @@ import `in`.gullak.plugins.configureHTTP
 import `in`.gullak.plugins.configureMonitoring
 import `in`.gullak.plugins.configureRouting
 import `in`.gullak.plugins.configureSerialization
-import `in`.gullak.plugins.initiateKoin
+import `in`.gullak.plugins.configureKoin
+import `in`.gullak.plugins.configureLocations
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.tomcat.Tomcat
 
@@ -14,6 +15,7 @@ fun main() {
     configureHTTP()
     configureMonitoring()
     configureSerialization()
-    initiateKoin()
+    configureKoin()
+    configureLocations()
   }.start(wait = true)
 }

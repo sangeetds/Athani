@@ -6,7 +6,7 @@ import io.ktor.server.application.Application
 import io.ktor.server.application.install
 import org.koin.logger.slf4jLogger
 
-fun Application.initiateKoin() {
+fun Application.configureKoin() {
   // Install Ktor features
   install(KoinPlugin) {
     slf4jLogger()
