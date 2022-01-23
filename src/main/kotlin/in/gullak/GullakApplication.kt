@@ -1,11 +1,11 @@
 package `in`.gullak
 
 import `in`.gullak.plugins.configureHTTP
+import `in`.gullak.plugins.configureKoin
+import `in`.gullak.plugins.configureLocations
 import `in`.gullak.plugins.configureMonitoring
 import `in`.gullak.plugins.configureRouting
 import `in`.gullak.plugins.configureSerialization
-import `in`.gullak.plugins.configureKoin
-import `in`.gullak.plugins.configureLocations
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.tomcat.Tomcat
 
