@@ -5,9 +5,9 @@ import `in`.gullak.bank.bankRouting
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
 import io.ktor.server.application.install
+import io.ktor.server.application.log
 import io.ktor.server.plugins.StatusPages
 import io.ktor.server.response.respond
-import io.ktor.server.routing.post
 import io.ktor.server.routing.route
 import io.ktor.server.routing.routing
 
@@ -24,8 +24,8 @@ fun Application.configureRouting() {
     }
 
     route("/gullak/v1") {
-      userRouting()
-      bankRouting()
+      userRouting(log)
+      bankRouting(log)
     }
   }
 }
