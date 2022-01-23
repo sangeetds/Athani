@@ -24,7 +24,7 @@ fun Application.bankRouting() {
         log.info("User ${user.name} found.")
         if (user.bankAccount != null) {
           log.info("User ${user.name} has bank account authorized")
-          call.respond(HttpStatusCode.OK, user.bankAccount)
+          call.respond(HttpStatusCode.OK, user.bankAccount.balances[0])
         }
 
         log.error("User ${user.name} has not authorized bank account")

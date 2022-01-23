@@ -18,17 +18,6 @@ class Authenticate {
   data class Logout(val user: User)
 }
 
-val users =
-  listOf(
-    User(
-      id = 1,
-      name = "Sangeet",
-      email = "sangeetnarayands@gmail.com",
-      loggedIn = false,
-      null
-    )
-  )
-
 fun Application.userRouting() {
   routing {
     post<Authenticate.Login> { login ->
