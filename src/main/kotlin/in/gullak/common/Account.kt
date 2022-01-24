@@ -5,4 +5,6 @@ abstract class Account(
   open val accountNumber: Long,
   open val accountType: String,
   open val balances: List<Balance>
-)
+) {
+  constructor(): this(0, 0, "", listOf())
+}

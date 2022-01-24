@@ -9,7 +9,6 @@ import `in`.gullak.plugins.configureSerialization
 import com.typesafe.config.ConfigFactory
 import io.ktor.server.application.port
 import io.ktor.server.config.HoconApplicationConfig
-import io.ktor.server.engine.commandLineEnvironment
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.tomcat.Tomcat
 
