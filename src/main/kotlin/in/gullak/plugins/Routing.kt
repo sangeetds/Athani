@@ -1,7 +1,7 @@
 package `in`.gullak.plugins
 
 import `in`.gullak.authentication.userRouting
-import `in`.gullak.bank.bankRouting
+import `in`.gullak.bank.stocksRouting
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
 import io.ktor.server.application.install
@@ -25,7 +25,7 @@ fun Application.configureRouting() {
 
     route("/gullak/v1") {
       userRouting(this@configureRouting.log)
-      bankRouting(this@configureRouting.log)
+      stocksRouting(this@configureRouting.log)
     }
   }
 }

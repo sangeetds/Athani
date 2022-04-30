@@ -1,7 +1,7 @@
 package `in`.gullak.authentication
 
-import `in`.gullak.bank.BankAccount
-import `in`.gullak.bank.BankBalance
+import `in`.gullak.bank.StocksAccount
+import `in`.gullak.bank.StocksBalance
 import kotlinx.datetime.LocalDateTime
 
 data class User(
@@ -9,7 +9,7 @@ data class User(
   val name: String,
   val email: String,
   var loggedIn: Boolean,
-  val bankAccount: BankAccount?
+  val stocksAccount: StocksAccount?
 )
 
 val users =
@@ -19,15 +19,16 @@ val users =
       name = "Sangeet",
       email = "sangeetnarayands@gmail.com",
       loggedIn = false,
-      bankAccount = BankAccount(
+      stocksAccount = StocksAccount(
         id = 1,
         accountNumber = 213456,
         accountType = "Savings",
         balances = listOf(
-          BankBalance(
+          StocksBalance(
             id = 1,
             dateObserved = LocalDateTime(2022, 1, 1, 0, 0, 0),
-            amount = 1000
+            amount = 1000,
+            source = "Zerodha",
           )
         )
       )

@@ -12,16 +12,16 @@ import io.ktor.util.logging.Logger
 @Location("/bank/{userId}")
 data class Bank(val userId: Long)
 
-fun Route.bankRouting(log: Logger) {
+fun Route.stocksRouting(log: Logger) {
   get<Bank> { bank ->
     val userId = bank.userId
     val user = users.firstOrNull { it.id == userId }
 
     if (user != null) {
       log.info("User ${user.name} found.")
-      if (user.bankAccount != null) {
+      if (user.stocksAccount != null) {
         log.info("User ${user.name} has bank account authorized")
-        call.respond(HttpStatusCode.OK, user.bankAccount.balances[0])
+        call.respond(HttpStatusCode.OK, user.stocksAccount.balances[0])
       }
 
       log.error("User ${user.name} has not authorized bank account")
