@@ -6,7 +6,7 @@ import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
 import io.ktor.server.application.install
 import io.ktor.server.application.log
-import io.ktor.server.plugins.StatusPages
+import io.ktor.server.plugins.statuspages.StatusPages
 import io.ktor.server.response.respond
 import io.ktor.server.routing.route
 import io.ktor.server.routing.routing
@@ -14,7 +14,7 @@ import io.ktor.server.routing.routing
 fun Application.configureRouting() {
 
   routing {
-    install(StatusPages) {
+    this@configureRouting.install(StatusPages) {
       exception<AuthenticationException> { call, _ ->
         call.respond(HttpStatusCode.Unauthorized)
       }
@@ -24,8 +24,8 @@ fun Application.configureRouting() {
     }
 
     route("/gullak/v1") {
-      userRouting(log)
-      bankRouting(log)
+      userRouting(this@configureRouting.log)
+      bankRouting(this@configureRouting.log)
     }
   }
 }

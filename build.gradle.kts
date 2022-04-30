@@ -16,6 +16,7 @@ application {
 }
 
 repositories {
+  mavenLocal()
   mavenCentral()
   maven { url = uri("https://maven.pkg.jetbrains.space/public/p/ktor/eap") }
 }
@@ -29,8 +30,6 @@ dependencies {
   implementation("io.ktor:ktor-server-call-logging:$ktorVersion")
   implementation("io.ktor:ktor-server-tomcat:$ktorVersion")
   implementation("io.ktor:ktor-server-locations:$ktorVersion")
-
-
 
   // Serialization
   implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
@@ -46,7 +45,7 @@ dependencies {
   // SLF4J Logger
   implementation("io.insert-koin:koin-logger-slf4j:$koinVersion")
 
-  implementation("com.apurebase:kgraphql-ktor:0.17.14")
+  implementation("org.sangeet:kgraphql-ktor:0.18.0")
 
   testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
   testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")

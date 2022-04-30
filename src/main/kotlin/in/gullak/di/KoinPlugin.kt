@@ -4,12 +4,14 @@ import io.ktor.events.EventDefinition
 import io.ktor.server.application.Application
 import io.ktor.server.application.ApplicationPlugin
 import io.ktor.server.application.ApplicationStopping
+import io.ktor.server.application.BaseApplicationPlugin
+import io.ktor.server.application.PluginInstance
 import io.ktor.util.AttributeKey
 import org.koin.core.KoinApplication
 import org.koin.core.context.GlobalContext.startKoin
 import org.koin.core.context.GlobalContext.stopKoin
 
-object KoinPlugin : ApplicationPlugin<Application, KoinApplication, Unit> {
+object KoinPlugin : BaseApplicationPlugin<Application, KoinApplication, Unit> {
 
   override val key: AttributeKey<Unit>
     get() = AttributeKey("Koin")
