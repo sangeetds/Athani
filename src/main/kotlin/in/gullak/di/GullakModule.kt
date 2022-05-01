@@ -1,10 +1,12 @@
 package `in`.gullak.di
 
-import `in`.gullak.bank.StocksService
-import `in`.gullak.bank.StocksServiceImpl
+import `in`.gullak.stocks.StocksAccountService
+import `in`.gullak.stocks.StocksAccountServiceImpl
+import `in`.gullak.stocks.StocksBalanceService
+import `in`.gullak.stocks.StocksBalanceServiceImpl
 import org.koin.dsl.module
-import org.koin.dsl.single
 
 val GullakModule = module {
-  single<StocksService>() { StocksServiceImpl() }
+  single<StocksAccountService>() { StocksAccountServiceImpl() }
+  single<StocksBalanceService>() { StocksBalanceServiceImpl() }
 }
