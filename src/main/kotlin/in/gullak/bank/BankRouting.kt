@@ -9,6 +9,7 @@ import io.ktor.server.response.respond
 import io.ktor.server.routing.Route
 import io.ktor.util.logging.Logger
 
+
 @Location("/bank/{userId}")
 data class Bank(val userId: Long)
 

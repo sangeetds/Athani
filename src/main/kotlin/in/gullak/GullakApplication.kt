@@ -1,6 +1,7 @@
 package `in`.gullak
 
 import `in`.gullak.plugins.configureHTTP
+import `in`.gullak.plugins.configureKGraphQL
 import `in`.gullak.plugins.configureKoin
 import `in`.gullak.plugins.configureLocations
 import `in`.gullak.plugins.configureMonitoring
@@ -15,11 +16,12 @@ import io.ktor.server.tomcat.Tomcat
 fun main() {
   val config = HoconApplicationConfig(ConfigFactory.load())
   embeddedServer(Tomcat, port = config.port, host = "0.0.0.0") {
+    configureKoin()
     configureLocations()
-    configureRouting()
     configureHTTP()
     configureMonitoring()
     configureSerialization()
-    configureKoin()
+    configureRouting()
+    configureKGraphQL()
   }.start(wait = true)
 }
