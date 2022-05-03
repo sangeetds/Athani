@@ -13,20 +13,8 @@ import io.ktor.server.routing.routing
 fun Application.configureRouting() {
 
   routing {
-    this@configureRouting.install(StatusPages) {
-      exception<AuthenticationException> { call, _ ->
-        call.respond(HttpStatusCode.Unauthorized)
-      }
-      exception<AuthorizationException> { call, _ ->
-        call.respond(HttpStatusCode.Forbidden)
-      }
-    }
-
     route("/gullak/v1") {
       userRouting(this@configureRouting.log)
     }
   }
 }
-
-class AuthenticationException : RuntimeException()
-class AuthorizationException : RuntimeException()

@@ -9,6 +9,7 @@ fun Application.configureKGraphQL() {
   install(GraphQL) {
     playground = true
     endpoint = "/gullak/v1/"
+    wrapErrors = false
 
     schema { listOf(stockSchema()) }
   }

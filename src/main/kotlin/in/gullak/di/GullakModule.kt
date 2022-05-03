@@ -8,5 +8,5 @@ import org.koin.dsl.module
 
 val GullakModule = module {
   single<StocksAccountService>() { StocksAccountServiceImpl() }
-  single<StocksBalanceService>() { StocksBalanceServiceImpl() }
+  // single<StocksBalanceService>() { StocksBalanceServiceImpl() }
 }
