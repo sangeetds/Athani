@@ -1,7 +1,7 @@
 package `in`.gullak.authentication
 
-import `in`.gullak.stocks.StocksAccount
-import `in`.gullak.stocks.StocksBalance
+import `in`.gullak.crypto.CryptoAccount
+import `in`.gullak.crypto.CryptoBalance
 import kotlinx.datetime.LocalDateTime
 
 data class User(
@@ -9,7 +9,7 @@ data class User(
   val name: String,
   val email: String,
   var loggedIn: Boolean,
-  val stocksAccount: StocksAccount?
+  val cryptoAccount: CryptoAccount?
 )
 
 val users =
@@ -19,13 +19,13 @@ val users =
       name = "Sangeet",
       email = "sangeetnarayands@gmail.com",
       loggedIn = false,
-      stocksAccount = StocksAccount(
+      cryptoAccount = CryptoAccount(
         id = 1,
         userId = 1,
         accountNumber = 213456,
         accountType = "Savings",
         balances = listOf(
-          StocksBalance(
+          CryptoBalance(
             id = 1,
             accountId = 1,
             dateObserved = LocalDateTime(2022, 1, 1, 0, 0, 0),

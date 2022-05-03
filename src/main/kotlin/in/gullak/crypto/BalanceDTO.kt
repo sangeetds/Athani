@@ -1,4 +1,4 @@
-package `in`.gullak.stocks
+package `in`.gullak.crypto
 
 import kotlinx.datetime.LocalDateTime
 

@@ -1,6 +1,6 @@
-package `in`.gullak.stocks
+package `in`.gullak.crypto
 
-data class StockDto(
+data class CryptoDto(
   val id: Long,
   val accountNumber: Long,
   val accountType: String,
