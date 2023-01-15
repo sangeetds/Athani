@@ -1,7 +1,6 @@
 package `in`.gullak
 
 import `in`.gullak.plugins.configureHTTP
-import `in`.gullak.plugins.configureKGraphQL
 import `in`.gullak.plugins.configureKoin
 import `in`.gullak.plugins.configureLocations
 import `in`.gullak.plugins.configureMonitoring
@@ -24,6 +23,5 @@ fun main() {
     configureHTTP()
     configureMonitoring()
     configureSerialization()
-    configureKGraphQL()
   }.start(wait = true)
 }
