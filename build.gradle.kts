@@ -5,8 +5,8 @@ val koinVersion: String by project
 
 plugins {
   application
-  kotlin("jvm") version "1.6.10"
-  id("org.jetbrains.kotlin.plugin.serialization") version "1.6.10"
+  kotlin("jvm") version "1.8.0"
+  id("org.jetbrains.kotlin.plugin.serialization") version "1.8.0"
 }
 
 group = "in.gullak"
@@ -38,14 +38,16 @@ dependencies {
   // Logging
   implementation("ch.qos.logback:logback-classic:$logbackVersion")
 
+  // Kotlin Date Time
   implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.2")
+
+  // Algo Quant
+  implementation("org.roboquant:roboquant:1.0.0")
 
   // Koin for Ktor
   implementation("io.insert-koin:koin-ktor:$koinVersion")
-  // SLF4J Logger
+  // SLF4J Logger for Koin
   implementation("io.insert-koin:koin-logger-slf4j:$koinVersion")
-
-  implementation("org.sangeet:kgraphql-ktor:0.18.0")
 
   testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
   testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
