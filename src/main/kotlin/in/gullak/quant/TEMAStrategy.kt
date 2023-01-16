@@ -39,18 +39,24 @@ class TEMAStrategy(
     }
 
     fun addPrice(price: Double) {
-      emaIndicator = updateIndicator(price, emaPeriod, emaIndicator)
-      shortTEMAIndicator = updateIndicator(price, temaShortPeriod, shortTEMAIndicator)
-      mediumTEMAIndicator = updateIndicator(price, temaMediumPeriod, mediumTEMAIndicator)
-      longTEMAIndicator = updateIndicator(price, temaLongPeriod, longTEMAIndicator)
+      // println("Adding price $price at period $periods")
+      periods++
+      emaIndicator = updateIndicator(price, emaPeriod, emaIndicator, "EMA")
+      shortTEMAIndicator = updateIndicator(price, temaShortPeriod, shortTEMAIndicator, "EMA")
+      mediumTEMAIndicator = updateIndicator(price, temaMediumPeriod, mediumTEMAIndicator, "EMA")
+      longTEMAIndicator = updateIndicator(price, temaLongPeriod, longTEMAIndicator, "EMA")
     }
 
     fun hasEnoughData(): Boolean = periods > temaLongPeriod
 
-    private fun updateIndicator(price: Double, period: Double, indicator: Double) = when {
-      periods < period - 1 -> indicator + price
-      periods == period - 1 -> (indicator + price) / (periods + 1)
-      else -> (price - indicator) * (smoothingConstant / period) + indicator
+    private fun updateIndicator(price: Double, period: Double, indicator: Double, name: String) : Double {
+      val newIndicator =  when {
+        periods < period - 1 -> indicator + price
+        periods == period - 1 -> (indicator + price) / (periods + 1)
+        else -> (price - indicator) * (smoothingConstant / period) + indicator
+      }
+      // println("$name is now $newIndicator")
+      return newIndicator
     }
   }
 
@@ -59,7 +65,9 @@ class TEMAStrategy(
     calculator.addPrice(price)
 
     if (calculator.hasEnoughData()) {
-      return when (val indicatorStatus = getIndicatorStatus()) {
+      val indicatorStatus = getIndicatorStatus()
+      // println("We are going to $indicatorStatus")
+      return when (indicatorStatus) {
         Rating.BUY -> Signal(asset = asset, rating = indicatorStatus, type = ENTRY)
         Rating.SELL -> Signal(asset = asset, rating = indicatorStatus, type = EXIT)
         else -> Signal(asset = asset, rating = indicatorStatus, type = BOTH)
