@@ -41,9 +41,6 @@ dependencies {
   // Kotlin Date Time
   implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.2")
 
-  // Algo Quant
-  implementation("org.roboquant:roboquant:1.0.0")
-
   // Koin for Ktor
   implementation("io.insert-koin:koin-ktor:$koinVersion")
   // SLF4J Logger for Koin
